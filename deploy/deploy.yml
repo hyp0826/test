@@ -1,0 +1,34 @@
+---                                                                  
+- hosts: auto                                                        
+  remote_user: suser                                                 
+  tasks:                                                             
+  - name: ping the host                                              
+    ping:                                                            
+  - name: Clean up the previous execution                            
+    file:                                                            
+      state: absent                                                  
+      path: "~/auto-zhhd"                                            
+  - name: Load SVN                                                   
+    subversion:                                                      
+      repo: https://192.168.64.20/svn/QA/branches/Wisdomchannel/web  
+      dest: ~/auto-zhhd                                              
+      username: xuyj                                                 
+      password: abc123_                                              
+      export: yes                                                    
+      force: yes                                                     
+  - name: Execute the automation test                                
+    shell: mvn test                                                  
+    ignore_errors: yes                                               
+    args:                                                            
+      chdir: "~/auto-zhhd"                                           
+                                                                     
+  - name: Zip the reports                                            
+    archive:                                                         
+      path: "~/auto-zhhd/target/surefire-reports"                    
+      dest: "~/auto-zhhd/reports.zip"                                
+                                                                     
+  - name: fetch the file to local                                    
+    fetch:
+      flat: yes
+      src:  "~/auto-zhhd/reports.zip"                                
+      dest: "./"

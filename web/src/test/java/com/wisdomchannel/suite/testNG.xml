@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite  name="Suite1">
+    <listeners>
+        <listener class-name="com.wisdomchannel.util.RetryListener"/>
+        <listener class-name="com.wisdomchannel.util.AssertionListener"/>
+    </listeners>
+    <test name="航道自动化测试" verbose="2" preserve-order="true">
+        <classes>
+            <class name="com.wisdomchannel.testcase.login.Login"/>
+            <class name="com.wisdomchannel.testcase.facilitymanage.bridgemanager.CreateBridge"/>
+            <class name="com.wisdomchannel.testcase.facilitymanage.bridgemanager.UpdataBridge"/>
+            <class name="com.wisdomchannel.testcase.facilitymanage.bridgemanager.DeleteBridge"/>
+            <class name="com.wisdomchannel.testcase.facilitymanage.channelmanger.NewChannel"/>
+            <class name="com.wisdomchannel.testcase.facilitymanage.channelmanger.DeleteChannel"/>
+            <class name="com.wisdomchannel.testcase.facilitymanage.wharfmanager.NewWharf"/>
+            <class name="com.wisdomchannel.testcase.facilitymanage.wharfmanager.EditWharf"/>
+            <class name="com.wisdomchannel.testcase.informationpublishing.CreateContact"/>
+            <class name="com.wisdomchannel.testcase.informationpublishing.UpdataContact"/>
+            <class name="com.wisdomchannel.testcase.informationpublishing.QueryContact"/>
+            <class name="com.wisdomchannel.testcase.informationpublishing.DeleteContact"/>
+            <class name="com.wisdomchannel.testcase.informationpublishing.CRUDInfoTemplate"/>
+            <class name="com.wisdomchannel.testcase.informationpublishing.InfoPublish"/>
+            <class name="com.wisdomchannel.testcase.transportregular.QueryEntryNotice"/>
+            <class name="com.wisdomchannel.testcase.transportregular.QueryEFiling"/>
+            <class name="com.wisdomchannel.testcase.baseseting.position.CreatePosition"/>
+            <class name="com.wisdomchannel.testcase.baseseting.position.UpdataPosition"/>
+            <class name="com.wisdomchannel.testcase.baseseting.position.QueryPosition"/>
+            <class name="com.wisdomchannel.testcase.baseseting.position.DeletePosition"/>
+            <class name="com.wisdomchannel.testcase.baseseting.person.CreatePerson"/>
+            <class name="com.wisdomchannel.testcase.baseseting.person.UpdataPerson"/>
+            <class name="com.wisdomchannel.testcase.baseseting.person.DeletePerson"/>
+            <class name="com.wisdomchannel.testcase.baseseting.person.QueryPerson"/>
+            <class name="com.wisdomchannel.testcase.baseseting.units.CreateUnits"/>
+            <class name="com.wisdomchannel.testcase.baseseting.units.UpdataUnits"/>
+            <class name="com.wisdomchannel.testcase.baseseting.units.DeleteUnits"/>
+            <class name="com.wisdomchannel.testcase.baseseting.units.QueryUnits"/>
+            <class name="com.wisdomchannel.testcase.baseseting.department.NewDepartment"/>
+            <class name="com.wisdomchannel.testcase.baseseting.department.EditDepartment"/>
+            <class name="com.wisdomchannel.testcase.baseseting.department.DeleteDepartment"/>
+        </classes>
+    </test>
+</suite>
+
+
